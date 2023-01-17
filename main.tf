@@ -24,7 +24,7 @@ module "kvstore_label" {
 }
 
 module "kvstore" {
-  source = "github.com/justtrackio/terraform-aws-kvstore?ref=v1.1.2"
+  source = "github.com/justtrackio/terraform-aws-kvstore?ref=v1.1.3"
 
   for_each = var.kvstores
 
