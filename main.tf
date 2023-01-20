@@ -25,7 +25,7 @@ module "kvstore_label" {
 
 module "kvstore" {
   source  = "justtrackio/kvstore/aws"
-  version = "1.1.3"
+  version = "1.2.0"
 
   for_each = var.kvstores
 
@@ -37,9 +37,7 @@ module "kvstore" {
   ddb_autoscale_read_schedule  = each.value.ddb.autoscaler.enabled ? each.value.ddb.autoscaler.read_schedule : []
   ddb_autoscale_write_schedule = each.value.ddb.autoscaler.enabled ? each.value.ddb.autoscaler.write_schedule : []
   ddb_billing_mode             = each.value.ddb.billing_mode
-  ddb_label_order              = var.label_orders.ddb
-
-  iam_label_order = var.label_orders.iam
+  label_orders                 = var.label_orders
 
   redis_cpu_size                           = each.value.redis.cpu_size
   redis_deployment_maximum_percent         = each.value.redis.deployment.maximum_percent
@@ -48,12 +46,12 @@ module "kvstore" {
   redis_ecs_cluster_arn                    = var.redis_ecs_cluster_arn
   redis_image_repository                   = each.value.redis.deployment.image.repository
   redis_image_tag                          = each.value.redis.deployment.image.tag
-  redis_label_order                        = var.label_orders.redis
   redis_launch_type                        = var.redis_launch_type
   redis_memory_size                        = each.value.redis.memory_size
   redis_network_mode                       = var.redis_network_mode
   redis_propagate_tags                     = var.redis_propagate_tags
   redis_service_discovery_dns_namespace_id = var.redis_service_discovery_dns_namespace_id
+  redis_service_discovery_name             = each.value.redis.service_discovery_name
   redis_service_memory_size                = each.value.redis.service_memory_size
   redis_service_placement_constraints      = each.value.redis.service_placement_constraints
   redis_vpc_id                             = var.redis_vpc_id

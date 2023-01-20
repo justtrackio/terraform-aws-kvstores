@@ -12,7 +12,11 @@ module "example" {
   }
 
   kvstores = {
-    basic = {}
+    basic = {
+      redis = {
+        service_discovery_name = "kvstore_entityName.service.redis"
+      }
+    }
   }
   redis_ecs_cluster_arn                    = "arn:aws:ecs:eu-central-1:123456789012:cluster/my-cluster"
   redis_service_discovery_dns_namespace_id = "ns-123456789abcdefg"

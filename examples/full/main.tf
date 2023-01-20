@@ -56,9 +56,10 @@ module "example" {
           maximum_percent         = 200
           minimum_healthy_percent = 100
         }
-        enabled             = true
-        memory_size         = "100"
-        service_memory_size = 150
+        enabled                = true
+        memory_size            = "100"
+        service_discovery_name = "kvstore_entityName.service.redis"
+        service_memory_size    = 150
         service_placement_constraints = [{
           type       = "memberOf"
           expression = "attribute:spotinst.io/container-instance-lifecycle==spot"
@@ -66,10 +67,10 @@ module "example" {
       }
     }
   }
-  redis_ecs_cluster_arn                    = "arn:aws:ecs:eu-central-1:164105964448:cluster/mcoins-sandbox-automation"
+  redis_ecs_cluster_arn                    = "arn:aws:ecs:eu-central-1:123456789012:cluster/my-cluster"
   redis_launch_type                        = "EC2"
   redis_network_mode                       = null
   redis_propagate_tags                     = "SERVICE"
-  redis_service_discovery_dns_namespace_id = "ns-odw635v7pb4veka3"
+  redis_service_discovery_dns_namespace_id = "ns-12345678abcdefgh"
   redis_vpc_id                             = null
 }
