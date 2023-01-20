@@ -16,7 +16,7 @@ variable "kvstores" {
       }), {})
       billing_mode = optional(string, "PROVISIONED")
     }), {})
-    redis = optional(object({
+    redis = object({
       cpu_size = optional(number, 25),
       deployment = optional(object({
         image = optional(object({
@@ -27,14 +27,15 @@ variable "kvstores" {
         maximum_percent         = optional(number, 100)
         minimum_healthy_percent = optional(number, 0)
       }), {})
-      enabled             = optional(bool, true),
-      memory_size         = optional(string, "25")
-      service_memory_size = optional(number, 50)
+      enabled                = optional(bool, true),
+      memory_size            = optional(string, "25")
+      service_discovery_name = optional(string, "")
+      service_memory_size    = optional(number, 50)
       service_placement_constraints = optional(set(object({
         type       = string
         expression = string
       })), [])
-    }), {})
+    })
   }))
   description = "Kvstores to be created"
   default     = {}
