@@ -16,7 +16,7 @@ No providers.
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_kvstore"></a> [kvstore](#module\_kvstore) | justtrackio/kvstore/aws | 1.2.0 |
+| <a name="module_kvstore"></a> [kvstore](#module\_kvstore) | justtrackio/kvstore/aws | 1.3.0 |
 | <a name="module_kvstore_label"></a> [kvstore\_label](#module\_kvstore\_label) | cloudposse/label/null | 0.25.0 |
 | <a name="module_this"></a> [this](#module\_this) | justtrackio/label/null | 0.26.0 |
 

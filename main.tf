@@ -25,7 +25,7 @@ module "kvstore_label" {
 
 module "kvstore" {
   source  = "justtrackio/kvstore/aws"
-  version = "1.2.0"
+  version = "1.3.0"
 
   for_each = var.kvstores
 
