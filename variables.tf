@@ -1,3 +1,9 @@
+variable "attributes_as_suffix" {
+  type        = bool
+  description = "Attributes passed into the module are put in front of each.key (model name) by default. Setting this to true will put the attributes after the each.key."
+  default     = false
+}
+
 variable "kvstores" {
   type = map(object({
     ddb = optional(object({
@@ -39,12 +45,6 @@ variable "kvstores" {
   }))
   description = "Kvstores to be created"
   default     = {}
-}
-
-variable "attributes_as_suffix" {
-  type        = bool
-  description = "Attributes passed into the module are put in front of each.key (model name) by default. Setting this to true will put the attributes after the each.key."
-  default     = false
 }
 
 variable "label_orders" {
