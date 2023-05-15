@@ -1,6 +1,6 @@
 module "kvstore_label" {
-  source  = "cloudposse/label/null"
-  version = "0.25.0" # requires Terraform >= 0.13.0
+  source  = "justtrackio/label/null"
+  version = "0.26.0" # requires Terraform >= 0.13.0
 
   for_each = var.kvstores
 
@@ -25,7 +25,7 @@ module "kvstore_label" {
 
 module "kvstore" {
   source  = "justtrackio/kvstore/aws"
-  version = "1.2.0"
+  version = "1.2.1"
 
   for_each = var.kvstores
 
