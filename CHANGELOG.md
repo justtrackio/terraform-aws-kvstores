@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/justtrackio/terraform-aws-kvstores/compare/v1.1.0...v1.1.1) (2023-05-15)
+
+
+### Bug Fixes
+
+* adjust_versions_variables_outputs ([#13](https://github.com/justtrackio/terraform-aws-kvstores/issues/13)) ([b0f20b7](https://github.com/justtrackio/terraform-aws-kvstores/commit/b0f20b7b5cc854af673b75b96ac0b01d72e3ace4))
+
 # Changelog
 
 All notable changes to this project will be documented in this file.
